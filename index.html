@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mathematics</title>
+</head>
+<body>
+    <h1>📐 Mathematics</h1>
+    <input type="button" onclick="a()" value="我该怎么操作？">
+    <br>
+    <h3>六年级上册数学素质测查</h3>
+    <input type="password"  id='v1'>
+    <input type="button" onclick="in1()" value="GET">
+    <h3 style="color: grey">六年级上册一单元数学素质测查（未开放）</h3>
+<!--    <input type="password"  id='v2'>-->
+<!--    <input type="button" onclick="in2()" value="GET">-->
+</body>
+<script>
+    function a() {
+        alert("以下列举的是每个考试的入口，我们给你密钥后可到对应考试输入框输入密钥即可进入考试")
+        alert("如果发现此按钮点不开，请删除所有输入框的内容。")
+        alert("警告：在我们声明开考前不要进入考试！")
+    }
+    function in1() {
+        a = "xgxx2022";
+        b = document.getElementById('v1').value;
+        if (a == b) {
+            if (confirm("密钥正确 🗝️\n你确定现在考试吗？") == true) {
+                window.location.replace("https://ks.wjx.top/vj/Ocxi5AZ.aspx");
+            }
+        } else {
+            alert("密钥错误 🔐")
+        }
+    }
+</script>
+</html>
