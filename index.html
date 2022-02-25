@@ -51,6 +51,8 @@
                 while (!confirm("完成考试后点击 确定 。"))
                 time2 = new Date().getTime();
                 time2 = time2 + 500;
+                time2 = new Date().getTime();
+                var n = new Notification('本次考试小结', { body: Math.trunc((time2-time1)/3600000)+"小时"+Math.trunc((time2-time1)/60000%60)+"分钟"+Math.trunc((time2-time1)/1000%60)+"秒"+Math.trunc((time2-time1)%1000)+"毫秒" });
                 alert("共用时："+Math.trunc((time2-time1)/3600000)+"小时"+Math.trunc((time2-time1)/60000%60)+"分钟"+Math.trunc((time2-time1)/1000%60)+"秒"+Math.trunc((time2-time1)%1000)+"毫秒");
             }
         } else {
