@@ -14,9 +14,9 @@
     <h3>六年级上册数学素质测查</h3>
     <input type="password"  id='v1'>
     <input type="button" onclick="in1()" value="GET">
+    <input type="button" onclick="download1()" value="PDF">
     <h3 style="color: grey">六年级上册一单元数学素质测查（未开放）</h3>
-<!--    <input type="password"  id='v2'>-->
-<!--    <input type="button" onclick="in2()" value="GET">-->
+
 </body>
 <script>
     eula = false;
@@ -32,9 +32,6 @@
         alert("以下列举的是每个考试的入口，我们给你密钥后可到对应考试输入框输入密钥即可进入考试")
         alert("如果发现此按钮点不开，请删除所有输入框的内容。")
         alert("警告：在我们声明开考前不要进入考试！")
-    }
-    function endtime() {
-
     }
     function in1() {
         if (eula == false) {
@@ -58,6 +55,19 @@
         } else {
             alert("密钥错误 🔐")
         }
+    }
+    function download1() {
+        a = "xgxx2022";
+        b = document.getElementById('v1').value;
+        document.getElementById("v1").value="";
+        if (a == b) {
+            if (confirm("密钥正确 🗝️\n点击确定以下载！") == true) {
+                window.open("演示文稿1.pdf",'_blank');
+            }
+        } else {
+            alert("密钥错误 🔐");
+        }
+
     }
 </script>
 </html>
