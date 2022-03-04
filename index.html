@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,56 +19,5 @@
     <h3 style="color: grey">六年级上册一单元数学素质测查（未开放）</h3>
 
 </body>
-<script>
-    eula = false;
-    function must() {
-        alert("请点击同意发送通知。（如果有的话）")
-        if(window.Notification && Notification.permission !== "denied") {
-            Notification.requestPermission(function(status) {
-                eula = true;
-            });
-        }
-    }
-    function a() {
-        alert("以下列举的是每个考试的入口，我们给你密钥后可到对应考试输入框输入密钥即可进入考试")
-        alert("如果发现此按钮点不开，请删除所有输入框的内容。")
-        alert("警告：在我们声明开考前不要进入考试！")
-    }
-    function in1() {
-        if (eula == false) {
-            alert("请先点击必点项。")
-            return ;
-        }
-        a = "xgxx2022";
-        b = document.getElementById('v1').value;
-        document.getElementById("v1").value="";
-        if (a === b) {
-            if (confirm("密钥正确 🗝️\n注意：在考试时不要关闭此标签页！\n交卷后回到此标签页。\n你确定现在考试吗？") === true) {
-                time1 = new Date().getTime();
-                window.open("https://ks.wjx.top/vj/Ocxi5AZ.aspx", '_blank').location;
-                while (!confirm("完成考试后点击 确定 。"))
-                time2 = new Date().getTime();
-                time2 = time2 + 500;
-                time2 = new Date().getTime();
-                var n = new Notification('本次考试小结', { body: Math.trunc((time2-time1)/3600000)+"小时"+Math.trunc((time2-time1)/60000%60)+"分钟"+Math.trunc((time2-time1)/1000%60)+"秒"+Math.trunc((time2-time1)%1000)+"毫秒" });
-                alert("共用时："+Math.trunc((time2-time1)/3600000)+"小时"+Math.trunc((time2-time1)/60000%60)+"分钟"+Math.trunc((time2-time1)/1000%60)+"秒"+Math.trunc((time2-time1)%1000)+"毫秒");
-            }
-        } else {
-            alert("密钥错误 🔐")
-        }
-    }
-    function download1() {
-        a = "xgxx2022";
-        b = document.getElementById('v1').value;
-        document.getElementById("v1").value="";
-        if (a == b) {
-            if (confirm("密钥正确 🗝️\n点击确定以下载！") == true) {
-                window.open("演示文稿1.pdf",'_blank');
-            }
-        } else {
-            alert("密钥错误 🔐");
-        }
-
-    }
-</script>
+<script src="index.js"></script>
 </html>
