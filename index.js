@@ -1,9 +1,14 @@
 eula = false;
 function must() {
-    alert("请点击同意发送通知。（如果有的话）")
+    if (eula == true) {
+        eula = false;
+        document.getElementById("eula").value="通知：关";
+        return ;
+    }
     if(window.Notification && Notification.permission !== "denied") {
         Notification.requestPermission(function(status) {
             eula = true;
+            document.getElementById("eula").value="通知：开";
         });
     }
 }
@@ -13,12 +18,9 @@ function a() {
     alert("警告：在我们声明开考前不要进入考试！")
 }
 function in1() {
-    if (eula == false) {
-        alert("请先点击必点项。")
-        return ;
-    }
-    a = "xgxx2022";
+    a = "1b331966125437397a0f1f222c99dc5c954433832ee4241fe22c7cd01404491f9cfcfac94ddf8d60735a85958a2a2701d595855fab30ee4ac6c24d7c10785e87";
     b = document.getElementById('v1').value;
+    b = hex_sha512(b).toLowerCase();
     document.getElementById("v1").value="";
     if (a === b) {
         if (confirm("密钥正确 🗝️\n注意：在考试时不要关闭此标签页！\n交卷后回到此标签页。\n你确定现在考试吗？（你只有一次考试机会！）") === true) {
@@ -29,7 +31,9 @@ function in1() {
             time2 = new Date().getTime();
             time2 = time2 + 500;
             time2 = new Date().getTime();
-            var n = new Notification('本次考试小结', { body: Math.trunc((time2-time1)/3600000)+"小时"+Math.trunc((time2-time1)/60000%60)+"分钟"+Math.trunc((time2-time1)/1000%60)+"秒"+Math.trunc((time2-time1)%1000)+"毫秒" });
+            if (eula == true) {
+                var n = new Notification('本次考试小结', { body: Math.trunc((time2-time1)/3600000)+"小时"+Math.trunc((time2-time1)/60000%60)+"分钟"+Math.trunc((time2-time1)/1000%60)+"秒"+Math.trunc((time2-time1)%1000)+"毫秒" });
+            }
             alert("共用时："+Math.trunc((time2-time1)/3600000)+"小时"+Math.trunc((time2-time1)/60000%60)+"分钟"+Math.trunc((time2-time1)/1000%60)+"秒"+Math.trunc((time2-time1)%1000)+"毫秒");
         }
     } else {
@@ -40,7 +44,7 @@ function download1() {
 
     // 为防止某些人的偷窥密码行为，我特地做了加密，看到这多出来的500行代码吗？不信你试试破译它。
 
-    a = "c58d8ed741dff0e9ba296474611719ba3834b9c534f36d3d27f6f7fcb7990db3c84fbe459806987d78bc4fd4779938d5838a9aebf1af052c6792e1ed0bd86ae4";
+    a = "1b331966125437397a0f1f222c99dc5c954433832ee4241fe22c7cd01404491f9cfcfac94ddf8d60735a85958a2a2701d595855fab30ee4ac6c24d7c10785e87";
     b = document.getElementById('v1').value;
     b = hex_sha512(b).toLowerCase();
     document.getElementById("v1").value="";
